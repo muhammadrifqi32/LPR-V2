@@ -24,7 +24,7 @@ public class PurchaseOrderController : ControllerBase
         return Ok(ApiResponse<List<PurchaseOrderResponseDto>>.Success(result, "Data retrieved successfully"));
     }
 
-    [HttpGet("{id:guid}")]
+    [HttpGet("{id}")]
     [ProducesResponseType(typeof(ApiResponse<PurchaseOrderResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(string id, CancellationToken cancellationToken)
@@ -52,7 +52,7 @@ public class PurchaseOrderController : ControllerBase
         return StatusCode(StatusCodes.Status201Created, ApiResponse<PurchaseOrderResponseDto>.Created(result, "Purchase Order generated successfully"));
     }
 
-    [HttpPut("{id:guid}")]
+    [HttpPut("{id}")]
     [ProducesResponseType(typeof(ApiResponse<PurchaseOrderResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -62,7 +62,7 @@ public class PurchaseOrderController : ControllerBase
         return Ok(ApiResponse<PurchaseOrderResponseDto>.Success(result, "Purchase Order updated successfully"));
     }
 
-    [HttpDelete("{id:guid}")]
+    [HttpDelete("{id}")]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]

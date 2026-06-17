@@ -24,7 +24,7 @@ public class RequestTypesController : ControllerBase
         return Ok(ApiResponse<IReadOnlyList<RequestTypeResponseDto>>.Success(result, "Data retrieved successfully"));
     }
 
-    [HttpGet("{id:guid}")]
+    [HttpGet("{id}")]
     [ProducesResponseType(typeof(ApiResponse<RequestTypeResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(string id, CancellationToken cancellationToken)
@@ -42,7 +42,7 @@ public class RequestTypesController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = result.RequestTypeId }, ApiResponse<RequestTypeResponseDto>.Created(result, "Data created successfully"));
     }
 
-    [HttpPut("{id:guid}")]
+    [HttpPut("{id}")]
     [ProducesResponseType(typeof(ApiResponse<RequestTypeResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -52,7 +52,7 @@ public class RequestTypesController : ControllerBase
         return Ok(ApiResponse<RequestTypeResponseDto>.Success(result, "Data updated successfully"));
     }
 
-    [HttpDelete("{id:guid}")]
+    [HttpDelete("{id}")]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(string id, CancellationToken cancellationToken)

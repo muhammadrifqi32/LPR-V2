@@ -13,7 +13,7 @@ public class PurchaseRequestApprovalService : IPurchaseRequestApprovalService
 {
     private static readonly string[] SubmittableStatuses = ["DRAFT", "REVISION_REQUIRED"];
     private static readonly string[] PendingGmStatuses = ["PENDING_GM_APPROVAL", "SUBMITTED", "PENDING"];
-    private static readonly string[] GmApprovedWaitingChairmanStatuses = ["PENDING_CHAIRMAN_CONFIRMATION", "GM_APPROVED", "APPROVED"];
+    private static readonly string[] GmApprovedWaitingChairmanStatuses = ["PENDING_CHAIRMAN_APPROVAL", "PENDING_CHAIRMAN_CONFIRMATION", "GM_APPROVED", "APPROVED"];
 
     private readonly AppDbContext _context;
     private readonly IPurchaseRequestRepository _purchaseRequestRepository;
@@ -93,7 +93,7 @@ public class PurchaseRequestApprovalService : IPurchaseRequestApprovalService
             purchaseRequestId,
             dto,
             approvalRecordStatusCandidates: ["APPROVED"],
-            targetStatusCandidates: ["PENDING_CHAIRMAN_CONFIRMATION", "GM_APPROVED", "APPROVED"],
+            targetStatusCandidates: ["PENDING_CHAIRMAN_APPROVAL", "PENDING_CHAIRMAN_CONFIRMATION", "GM_APPROVED", "APPROVED"],
             actionCode: "GM_APPROVE",
             successDescription: "Purchase request approved by GM and moved to Chairman confirmation.",
             requireNotes: false,

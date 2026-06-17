@@ -59,11 +59,36 @@ public class AppDbContext : DbContext
         ConfigureInvoiceAndPaymentV2(b);
         ConfigureApprovalAndAudit(b);
         ConfigureAccountAuditForeignKeys(b);
+        ConfigureUlidColumns(b);
 
         SeedData.Apply(b);
 
         foreach (var fk in b.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             fk.DeleteBehavior = DeleteBehavior.Restrict;
+    }
+
+
+    private static void ConfigureUlidColumns(ModelBuilder b)
+    {
+        foreach (var entityType in b.Model.GetEntityTypes())
+        {
+            foreach (var property in entityType.GetProperties())
+            {
+                if (property.ClrType != typeof(string))
+                    continue;
+
+                var isUlidColumn = property.Name.EndsWith("Id", StringComparison.OrdinalIgnoreCase)
+                    || property.Name is "CreatedBy" or "UpdatedBy";
+
+                if (!isUlidColumn)
+                    continue;
+
+                b.Entity(entityType.ClrType)
+                    .Property(property.Name)
+                    .HasMaxLength(26)
+                    .IsUnicode(false);
+            }
+        }
     }
 
     private static void ConfigureMaster(ModelBuilder b)

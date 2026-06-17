@@ -24,7 +24,7 @@ public class ProcurementRequestController : ControllerBase
         return Ok(ApiResponse<IReadOnlyList<ProcurementRequestResponseDto>>.Success(result, "Data retrieved successfully"));
     }
 
-    [HttpGet("{id:guid}")]
+    [HttpGet("{id}")]
     [ProducesResponseType(typeof(ApiResponse<ProcurementRequestResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(string id, CancellationToken cancellationToken)

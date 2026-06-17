@@ -20,7 +20,7 @@ public class PurchaseRequestController : ControllerBase
         _purchaseRequestApprovalService = purchaseRequestApprovalService;
     }
 
-    [HttpGet("{id:guid}")]
+    [HttpGet("{id}")]
     [ProducesResponseType(typeof(ApiResponse<PurchaseRequestResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(string id, CancellationToken cancellationToken)
@@ -29,7 +29,7 @@ public class PurchaseRequestController : ControllerBase
         return Ok(ApiResponse<PurchaseRequestResponseDto>.Success(result, "Data retrieved successfully"));
     }
 
-    [HttpPost("{id:guid}/submit")]
+    [HttpPost("{id}/submit")]
     [ProducesResponseType(typeof(ApiResponse<SubmitResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -39,7 +39,7 @@ public class PurchaseRequestController : ControllerBase
         return Ok(ApiResponse<SubmitResponseDto>.Success(result, "Purchase Request submitted to GM approval successfully"));
     }
 
-    [HttpPost("{id:guid}/approve-gm")]
+    [HttpPost("{id}/approve-gm")]
     [ProducesResponseType(typeof(ApiResponse<SubmitResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -49,7 +49,7 @@ public class PurchaseRequestController : ControllerBase
         return Ok(ApiResponse<SubmitResponseDto>.Success(result, "Purchase Request approved by GM successfully"));
     }
 
-    [HttpPost("{id:guid}/reject-gm")]
+    [HttpPost("{id}/reject-gm")]
     [ProducesResponseType(typeof(ApiResponse<SubmitResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -59,7 +59,7 @@ public class PurchaseRequestController : ControllerBase
         return Ok(ApiResponse<SubmitResponseDto>.Success(result, "Purchase Request rejected by GM successfully"));
     }
 
-    [HttpPost("{id:guid}/request-revision-gm")]
+    [HttpPost("{id}/request-revision-gm")]
     [ProducesResponseType(typeof(ApiResponse<SubmitResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -69,7 +69,7 @@ public class PurchaseRequestController : ControllerBase
         return Ok(ApiResponse<SubmitResponseDto>.Success(result, "Purchase Request revision requested by GM successfully"));
     }
 
-    [HttpPost("{id:guid}/record-chairman-approval")]
+    [HttpPost("{id}/record-chairman-approval")]
     [ProducesResponseType(typeof(ApiResponse<SubmitResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -79,7 +79,7 @@ public class PurchaseRequestController : ControllerBase
         return Ok(ApiResponse<SubmitResponseDto>.Success(result, "Chairman approval recorded successfully"));
     }
 
-    [HttpPost("{id:guid}/record-chairman-rejection")]
+    [HttpPost("{id}/record-chairman-rejection")]
     [ProducesResponseType(typeof(ApiResponse<SubmitResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -89,7 +89,7 @@ public class PurchaseRequestController : ControllerBase
         return Ok(ApiResponse<SubmitResponseDto>.Success(result, "Chairman rejection recorded successfully"));
     }
 
-    [HttpPost("{id:guid}/record-chairman-revision")]
+    [HttpPost("{id}/record-chairman-revision")]
     [ProducesResponseType(typeof(ApiResponse<SubmitResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -99,7 +99,7 @@ public class PurchaseRequestController : ControllerBase
         return Ok(ApiResponse<SubmitResponseDto>.Success(result, "Chairman revision request recorded successfully"));
     }
 
-    [HttpGet("{id:guid}/approval-history")]
+    [HttpGet("{id}/approval-history")]
     [ProducesResponseType(typeof(ApiResponse<List<ApprovalHistoryResponseDto>>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetApprovalHistory(string id, CancellationToken cancellationToken)

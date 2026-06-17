@@ -25,13 +25,17 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.Account", b =>
                 {
                     b.Property<string>("AccountId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -49,13 +53,17 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("AccountId");
 
@@ -73,50 +81,54 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            AccountId = "ACCOUNT_REQUESTER",
+                            AccountId = "01KV9YAJTQ6ZW1FZ39B83T1JKE",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "requester@test.com",
                             IsDeleted = false,
                             Password = "DUMMY_PASSWORD_NOT_USED_YET",
-                            RoleId = "ROLE_REQUESTER"
+                            RoleId = "01KV9YAJTH0SKHS01HFYHV2YCX"
                         },
                         new
                         {
-                            AccountId = "ACCOUNT_PROCURE",
+                            AccountId = "01KV9YAJTRK8ER2QQPT4XRZAGR",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "procure@test.com",
                             IsDeleted = false,
                             Password = "DUMMY_PASSWORD_NOT_USED_YET",
-                            RoleId = "ROLE_PROCURE"
+                            RoleId = "01KV9YAJTJ7TRMCT2JAYYXCG7V"
                         },
                         new
                         {
-                            AccountId = "ACCOUNT_GM",
+                            AccountId = "01KV9YAJTS6BKRZBE1MR3CP3XK",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "gm@test.com",
                             IsDeleted = false,
                             Password = "DUMMY_PASSWORD_NOT_USED_YET",
-                            RoleId = "ROLE_GM"
+                            RoleId = "01KV9YAJTKQJ4J7E61X4WJ8NPY"
                         },
                         new
                         {
-                            AccountId = "ACCOUNT_SUPER_ADMIN",
+                            AccountId = "01KV9YAJTTPE5ACQPKH6VMT3XH",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Email = "superadmin@maser.com",
                             IsDeleted = false,
                             Password = "$2a$11$REPLACE_WITH_BCRYPT_HASH",
-                            RoleId = "ROLE_ADMIN"
+                            RoleId = "01KV9YAJTP10H6R0RHK6BJN139"
                         });
                 });
 
             modelBuilder.Entity("PurchaseRequestSystem.Models.ActivityLog", b =>
                 {
                     b.Property<string>("ActivityLogId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("AccountId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("Action")
                         .IsRequired()
@@ -130,7 +142,9 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("DocumentId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("DocumentType")
                         .IsRequired()
@@ -155,34 +169,46 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.ApprovalRecord", b =>
                 {
                     b.Property<string>("ApprovalRecordId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("ApprovalStageId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProcurementRequestId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("StatusId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("ApprovalRecordId");
 
@@ -203,7 +229,9 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.ApprovalStage", b =>
                 {
                     b.Property<string>("ApprovalStageId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -225,21 +253,21 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            ApprovalStageId = "STAGE_PROCURE",
+                            ApprovalStageId = "01KV9YAJV1ARNW6X2SXVTGQTK3",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StageName = "Procure"
                         },
                         new
                         {
-                            ApprovalStageId = "STAGE_GM",
+                            ApprovalStageId = "01KV9YAJV2C511FFHH24D2MWZD",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StageName = "GM"
                         },
                         new
                         {
-                            ApprovalStageId = "STAGE_CHAIRMAN",
+                            ApprovalStageId = "01KV9YAJV3V3TNQSGJHRCC4SWQ",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StageName = "Chairman"
@@ -249,7 +277,9 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.Company", b =>
                 {
                     b.Property<string>("CompanyId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("CompanyCode")
                         .IsRequired()
@@ -263,7 +293,9 @@ namespace PurchaseRequestSystem.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -272,7 +304,9 @@ namespace PurchaseRequestSystem.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("CompanyId");
 
@@ -286,10 +320,11 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            CompanyId = "COMPANY_TEST",
-                            CompanyCode = "CMP001",
-                            CompanyName = "PT Test Company",
+                            CompanyId = "01KV9ZC1WJ31VKTX0HVDE9PAPA",
+                            CompanyCode = "PT-ABC",
+                            CompanyName = "PT ABC Construction Indonesia",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "01KV9YAJTTPE5ACQPKH6VMT3XH",
                             IsDeleted = false
                         });
                 });
@@ -297,13 +332,17 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.GoodsReceipt", b =>
                 {
                     b.Property<string>("GoodsReceiptId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("DiscrepancyNotes")
                         .HasColumnType("nvarchar(max)");
@@ -320,7 +359,9 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("PurchaseOrderId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("ReceivedBy")
                         .IsRequired()
@@ -331,13 +372,17 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("StatusId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("GoodsReceiptId");
 
@@ -356,13 +401,17 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.GoodsReceiptDetail", b =>
                 {
                     b.Property<string>("GoodsReceiptDetailId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<int>("DetailNo")
                         .HasColumnType("int");
@@ -376,18 +425,24 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("GoodsReceiptId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<bool>("IsMatchPo")
                         .HasColumnType("bit");
 
                     b.Property<string>("MaterialId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("PurchaseOrderDetailId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<decimal>("ReceivedQty")
                         .HasPrecision(18, 4)
@@ -398,13 +453,17 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("UomId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("GoodsReceiptDetailId");
 
@@ -426,20 +485,26 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.Invoice", b =>
                 {
                     b.Property<string>("InvoiceId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("DueDate")
                         .HasColumnType("date");
 
                     b.Property<string>("GoodsReceiptId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("InvoiceDate")
                         .HasColumnType("date");
@@ -456,11 +521,15 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("PurchaseOrderId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("StatusDetailId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<decimal>("SubtotalAmount")
                         .HasPrecision(18, 2)
@@ -478,7 +547,9 @@ namespace PurchaseRequestSystem.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("InvoiceId");
 
@@ -498,7 +569,9 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.Material", b =>
                 {
                     b.Property<string>("MaterialId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -516,7 +589,9 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("UomId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -533,19 +608,39 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            MaterialId = "MAT_CEMENT",
+                            MaterialId = "01KV9ZC1WJWP04EDTX8C1H76E1",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Description = "Cement for construction work",
-                            MaterialCode = "MAT001",
-                            MaterialName = "Cement",
-                            UomId = "UOM_PCS"
+                            Description = "Standard grade Portland cement, 50kg bag",
+                            MaterialCode = "MAT-CEM-001",
+                            MaterialName = "Cement Portland",
+                            UomId = "01KV9ZC1WJSEG74KJFNCSTJSWH"
+                        },
+                        new
+                        {
+                            MaterialId = "01KV9ZC1WJEW363D09Z8A62NTW",
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "Pre-cast concrete pillar, 3m length",
+                            MaterialCode = "MAT-PLR-001",
+                            MaterialName = "Concrete Pillar",
+                            UomId = "01KV9ZC1WJGCN3SJFCEBTS0ERE"
+                        },
+                        new
+                        {
+                            MaterialId = "01KV9ZC1WJDZES734T9MPBZJZG",
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "Deformed steel bar, 12mm diameter",
+                            MaterialCode = "MAT-STL-001",
+                            MaterialName = "Steel Bar",
+                            UomId = "01KV9ZC1WJSEG74KJFNCSTJSWH"
                         });
                 });
 
             modelBuilder.Entity("PurchaseRequestSystem.Models.ModuleType", b =>
                 {
                     b.Property<string>("ModuleTypeId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -570,49 +665,49 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            ModuleTypeId = "MODULE_PROPOSAL",
+                            ModuleTypeId = "01KV9YAJV48EVSN3EA0DC0TYVH",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             ModuleTypeCode = "PROPOSAL",
                             ModuleTypeDescription = "Proposal Workflow"
                         },
                         new
                         {
-                            ModuleTypeId = "MODULE_PROCUREMENT_REQUEST",
+                            ModuleTypeId = "01KV9YAJV5QB7GP7WHCF79ZXBZ",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             ModuleTypeCode = "PROCUREMENT_REQUEST",
                             ModuleTypeDescription = "Procurement Request Workflow"
                         },
                         new
                         {
-                            ModuleTypeId = "MODULE_PURCHASE_REQUEST",
+                            ModuleTypeId = "01KV9YAJV63ZT8JHHYGNTSSQK6",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             ModuleTypeCode = "PURCHASE_REQUEST",
                             ModuleTypeDescription = "Purchase Request Workflow"
                         },
                         new
                         {
-                            ModuleTypeId = "MODULE_PURCHASE_ORDER",
+                            ModuleTypeId = "01KV9YAJV7C3KYR6WCM7WHW7AC",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             ModuleTypeCode = "PURCHASE_ORDER",
                             ModuleTypeDescription = "Purchase Order Workflow"
                         },
                         new
                         {
-                            ModuleTypeId = "MODULE_GOODS_RECEIPT",
+                            ModuleTypeId = "01KV9YAJV89C6RTMM8Y4A2RFZ8",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             ModuleTypeCode = "GOODS_RECEIPT",
                             ModuleTypeDescription = "Goods Receipt Workflow"
                         },
                         new
                         {
-                            ModuleTypeId = "MODULE_INVOICE",
+                            ModuleTypeId = "01KV9YAJV9KSBT1VM9NVA57Q9J",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             ModuleTypeCode = "INVOICE",
                             ModuleTypeDescription = "Invoice Workflow"
                         },
                         new
                         {
-                            ModuleTypeId = "MODULE_PAYMENT",
+                            ModuleTypeId = "01KV9YAJVABJADS66JR7HASXSF",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             ModuleTypeCode = "PAYMENT",
                             ModuleTypeDescription = "Payment Workflow"
@@ -622,17 +717,23 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.Payment", b =>
                 {
                     b.Property<string>("PaymentId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("InvoiceId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
@@ -652,13 +753,17 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("StatusDetailId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("PaymentId");
 
@@ -672,35 +777,47 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.ProcurementRequest", b =>
                 {
                     b.Property<string>("ProcurementRequestId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("ProcurementRequestNo")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProposalId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("RequestDate")
                         .HasColumnType("date");
 
                     b.Property<string>("RequestTypeId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("RequesterId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("StatusId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("SubmittedAt")
                         .HasColumnType("datetime2");
@@ -709,7 +826,9 @@ namespace PurchaseRequestSystem.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("ProcurementRequestId");
 
@@ -734,13 +853,17 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.Proposal", b =>
                 {
                     b.Property<string>("ProposalId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("ProposalAttachmentPath")
                         .HasColumnType("nvarchar(max)");
@@ -757,11 +880,15 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("RequesterId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("StatusId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("SubmittedAt")
                         .HasColumnType("datetime2");
@@ -770,7 +897,9 @@ namespace PurchaseRequestSystem.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("ProposalId");
 
@@ -791,7 +920,9 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.ProposalDetail", b =>
                 {
                     b.Property<string>("ProposalDetailId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<decimal>("ApprovedQty")
                         .HasPrecision(18, 4)
@@ -805,22 +936,30 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("MaterialId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("ProposalId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<decimal>("RequestedQty")
                         .HasPrecision(18, 4)
                         .HasColumnType("decimal(18,4)");
 
                     b.Property<string>("StatusId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("UomId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -841,16 +980,22 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.PurchaseOrder", b =>
                 {
                     b.Property<string>("PurchaseOrderId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("CompanyId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<decimal>("GrandtotalAmount")
                         .HasPrecision(18, 2)
@@ -871,11 +1016,15 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("PurchaseRequestId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("StatusId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<decimal>("SubtotalAmount")
                         .HasPrecision(18, 2)
@@ -886,7 +1035,9 @@ namespace PurchaseRequestSystem.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("TaxId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<decimal>("TaxRate")
                         .HasPrecision(9, 4)
@@ -896,10 +1047,14 @@ namespace PurchaseRequestSystem.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("VendorId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("PurchaseOrderId");
 
@@ -926,7 +1081,9 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.PurchaseOrderDetail", b =>
                 {
                     b.Property<string>("PurchaseOrderDetailId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -936,17 +1093,23 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("MaterialId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PurchaseOrderId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("PurchaseRequestDetailId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<decimal>("Quantity")
                         .HasPrecision(18, 4)
@@ -962,7 +1125,9 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("UomId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -983,19 +1148,25 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.PurchaseOrderPayment", b =>
                 {
                     b.Property<string>("PurchaseOrderPaymentId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("DueDate")
                         .HasColumnType("date");
 
                     b.Property<string>("GoodsReceiptId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("InvoiceDate")
                         .HasColumnType("date");
@@ -1021,17 +1192,23 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("PurchaseOrderId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("StatusId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("PurchaseOrderPaymentId");
 
@@ -1051,33 +1228,43 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.PurchaseRequest", b =>
                 {
                     b.Property<string>("PurchaseRequestId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProcurementRequestId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("PurchaseRequestNo")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("StatusId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("PurchaseRequestId");
 
@@ -1100,30 +1287,40 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.PurchaseRequestDetail", b =>
                 {
                     b.Property<string>("PurchaseRequestDetailId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MaterialId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProposalDetailId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("PurchaseRequestId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<decimal>("Quantity")
                         .HasPrecision(18, 4)
@@ -1131,13 +1328,17 @@ namespace PurchaseRequestSystem.Migrations
 
                     b.Property<string>("UomId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.HasKey("PurchaseRequestDetailId");
 
@@ -1159,17 +1360,23 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.RefreshToken", b =>
                 {
                     b.Property<string>("RefreshTokenId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("AccountId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("DeviceName")
                         .HasColumnType("nvarchar(max)");
@@ -1209,7 +1416,9 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.RequestType", b =>
                 {
                     b.Property<string>("RequestTypeId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -1238,26 +1447,28 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            RequestTypeId = "REQ_PROJECT",
+                            RequestTypeId = "01KV9YAJTZAWD6RC3N26SBJGVT",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Description = "Starts from an approved Proposal",
+                            Description = "Requires prior Proposal approval before PR is created",
                             RequestTypeCode = "PROJECT",
-                            RequestTypeName = "Project"
+                            RequestTypeName = "Project Request"
                         },
                         new
                         {
-                            RequestTypeId = "REQ_NON_PROJECT",
+                            RequestTypeId = "01KV9YAJV06WF2FKC1613J54W9",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Description = "Created directly by Procurement",
+                            Description = "No Proposal needed; Procurement Request created directly",
                             RequestTypeCode = "NON_PROJECT",
-                            RequestTypeName = "Non-Project"
+                            RequestTypeName = "Non-Project Request"
                         });
                 });
 
             modelBuilder.Entity("PurchaseRequestSystem.Models.Role", b =>
                 {
                     b.Property<string>("RoleId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -1286,7 +1497,7 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            RoleId = "ROLE_REQUESTER",
+                            RoleId = "01KV9YAJTH0SKHS01HFYHV2YCX",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Description = "Creates proposals and project purchase requests",
                             RoleCode = "REQUESTER",
@@ -1294,7 +1505,7 @@ namespace PurchaseRequestSystem.Migrations
                         },
                         new
                         {
-                            RoleId = "ROLE_PROCURE",
+                            RoleId = "01KV9YAJTJ7TRMCT2JAYYXCG7V",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Description = "Reviews proposals and creates non-project requests / POs",
                             RoleCode = "PROCURE",
@@ -1302,7 +1513,7 @@ namespace PurchaseRequestSystem.Migrations
                         },
                         new
                         {
-                            RoleId = "ROLE_GM",
+                            RoleId = "01KV9YAJTKQJ4J7E61X4WJ8NPY",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Description = "Approves purchase requests and records Chairman decisions",
                             RoleCode = "GM",
@@ -1310,7 +1521,7 @@ namespace PurchaseRequestSystem.Migrations
                         },
                         new
                         {
-                            RoleId = "ROLE_CHAIRMAN",
+                            RoleId = "01KV9YAJTMQPEATF1DDMD3T7X7",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Description = "Offline final approver",
                             RoleCode = "CHAIRMAN",
@@ -1318,7 +1529,7 @@ namespace PurchaseRequestSystem.Migrations
                         },
                         new
                         {
-                            RoleId = "ROLE_PROJECT_ADMIN",
+                            RoleId = "01KV9YAJTN2S0RQ7946KJ6BRAG",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Description = "Generates purchase orders",
                             RoleCode = "PROJECT_ADMIN",
@@ -1326,7 +1537,7 @@ namespace PurchaseRequestSystem.Migrations
                         },
                         new
                         {
-                            RoleId = "ROLE_ADMIN",
+                            RoleId = "01KV9YAJTP10H6R0RHK6BJN139",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Description = "System administrator",
                             RoleCode = "ADMIN",
@@ -1337,7 +1548,9 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.Status", b =>
                 {
                     b.Property<string>("StatusId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -1359,126 +1572,126 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            StatusId = "STATUS_DRAFT",
+                            StatusId = "01KV9YAJVBPHF32EEK5J9WTPDZ",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "DRAFT"
                         },
                         new
                         {
-                            StatusId = "STATUS_PENDING",
+                            StatusId = "01KV9YAJVCN540QES5K48WWQEJ",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "PENDING"
                         },
                         new
                         {
-                            StatusId = "STATUS_SUBMITTED",
+                            StatusId = "01KV9YAJVD98AWBSYEH8X5F2ME",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "SUBMITTED"
                         },
                         new
                         {
-                            StatusId = "STATUS_UNDER_REVIEW",
+                            StatusId = "01KV9YAJVEVBV18V9Z67Y3EYJC",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "UNDER_REVIEW"
                         },
                         new
                         {
-                            StatusId = "STATUS_APPROVED",
+                            StatusId = "01KV9YAJVF37DXVMEZP8XSGBQR",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "APPROVED"
                         },
                         new
                         {
-                            StatusId = "STATUS_REJECTED",
+                            StatusId = "01KV9YAJVGEG94EAA775GMZWYQ",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "REJECTED"
                         },
                         new
                         {
-                            StatusId = "STATUS_REVISION_REQUIRED",
+                            StatusId = "01KV9YAJVHBNJXB222VTHBRDSF",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "REVISION_REQUIRED"
                         },
                         new
                         {
-                            StatusId = "STATUS_PARTIALLY_APPROVED",
+                            StatusId = "01KV9YAJVJBBSNXH1E10MT7CQ9",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "PARTIALLY_APPROVED"
                         },
                         new
                         {
-                            StatusId = "STATUS_PO_OPEN",
+                            StatusId = "01KV9YAJVK8HCAQ44SMGTT4G5E",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
-                            StatusName = "PO_OPEN"
+                            StatusName = "OPEN"
                         },
                         new
                         {
-                            StatusId = "STATUS_PARTIALLY_RECEIVED",
+                            StatusId = "01KV9YAJVMNVYEZJ4R96STMZQY",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "PARTIALLY_RECEIVED"
                         },
                         new
                         {
-                            StatusId = "STATUS_FULLY_RECEIVED",
+                            StatusId = "01KV9YAJVNKFR14HVFAYJYB9DB",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "FULLY_RECEIVED"
                         },
                         new
                         {
-                            StatusId = "STATUS_UNPAID",
+                            StatusId = "01KV9YAJVPH2YJQKXY06H8VVZ3",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "UNPAID"
                         },
                         new
                         {
-                            StatusId = "STATUS_PARTIALLY_PAID",
+                            StatusId = "01KV9YAJVQ57A3XAZDSEXAG3EM",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "PARTIALLY_PAID"
                         },
                         new
                         {
-                            StatusId = "STATUS_PAID",
+                            StatusId = "01KV9YAJVR8MDP28ZXYXV5DBVJ",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "PAID"
                         },
                         new
                         {
-                            StatusId = "STATUS_PENDING_GM",
+                            StatusId = "01KV9YAJVSMFBYSSKFMBYN2SQ6",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "PENDING_GM_APPROVAL"
                         },
                         new
                         {
-                            StatusId = "STATUS_GM_APPROVED",
+                            StatusId = "01KV9YAJVT70W8X52276R2PRE4",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "GM_APPROVED"
                         },
                         new
                         {
-                            StatusId = "STATUS_PENDING_CHAIRMAN",
+                            StatusId = "01KV9YAJVVTZ2N611HFYQM5R9F",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "PENDING_CHAIRMAN_APPROVAL"
                         },
                         new
                         {
-                            StatusId = "STATUS_CHAIRMAN_APPROVED",
+                            StatusId = "01KV9YAJVW1S8WD9ZE772B0CPC",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
                             StatusName = "CHAIRMAN_APPROVED"
@@ -1488,18 +1701,24 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.StatusDetail", b =>
                 {
                     b.Property<string>("StatusDetailId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModuleTypeId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("StatusId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -1516,269 +1735,271 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            StatusDetailId = "MODULE_PROPOSAL_STATUS_DRAFT",
+                            StatusDetailId = "01KV9YAW9NB9KNKKMCZP70KCJC",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROPOSAL",
-                            StatusId = "STATUS_DRAFT"
+                            ModuleTypeId = "01KV9YAJV48EVSN3EA0DC0TYVH",
+                            StatusId = "01KV9YAJVBPHF32EEK5J9WTPDZ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROPOSAL_STATUS_PENDING",
+                            StatusDetailId = "01KV9YAW9PCY3FQAFJ20VKQWH1",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROPOSAL",
-                            StatusId = "STATUS_PENDING"
+                            ModuleTypeId = "01KV9YAJV48EVSN3EA0DC0TYVH",
+                            StatusId = "01KV9YAJVCN540QES5K48WWQEJ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROPOSAL_STATUS_SUBMITTED",
+                            StatusDetailId = "01KV9YAW9QH6K4GG7D48AG5PDB",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROPOSAL",
-                            StatusId = "STATUS_SUBMITTED"
+                            ModuleTypeId = "01KV9YAJV48EVSN3EA0DC0TYVH",
+                            StatusId = "01KV9YAJVD98AWBSYEH8X5F2ME"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROPOSAL_STATUS_UNDER_REVIEW",
+                            StatusDetailId = "01KV9YAW9RDDRNENFHDT4SG791",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROPOSAL",
-                            StatusId = "STATUS_UNDER_REVIEW"
+                            ModuleTypeId = "01KV9YAJV48EVSN3EA0DC0TYVH",
+                            StatusId = "01KV9YAJVEVBV18V9Z67Y3EYJC"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROPOSAL_STATUS_APPROVED",
+                            StatusDetailId = "01KV9YAW9SYPAKY3TECN08V6MW",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROPOSAL",
-                            StatusId = "STATUS_APPROVED"
+                            ModuleTypeId = "01KV9YAJV48EVSN3EA0DC0TYVH",
+                            StatusId = "01KV9YAJVF37DXVMEZP8XSGBQR"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROPOSAL_STATUS_REJECTED",
+                            StatusDetailId = "01KV9YAW9THV9N93VG2Z64VEBQ",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROPOSAL",
-                            StatusId = "STATUS_REJECTED"
+                            ModuleTypeId = "01KV9YAJV48EVSN3EA0DC0TYVH",
+                            StatusId = "01KV9YAJVGEG94EAA775GMZWYQ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROPOSAL_STATUS_REVISION_REQUIRED",
+                            StatusDetailId = "01KV9YAW9VW7DKTA6ZH35VZ170",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROPOSAL",
-                            StatusId = "STATUS_REVISION_REQUIRED"
+                            ModuleTypeId = "01KV9YAJV48EVSN3EA0DC0TYVH",
+                            StatusId = "01KV9YAJVHBNJXB222VTHBRDSF"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROPOSAL_STATUS_PARTIALLY_APPROVED",
+                            StatusDetailId = "01KV9YAW9WATY1FB9TMDPVCX1A",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROPOSAL",
-                            StatusId = "STATUS_PARTIALLY_APPROVED"
+                            ModuleTypeId = "01KV9YAJV48EVSN3EA0DC0TYVH",
+                            StatusId = "01KV9YAJVJBBSNXH1E10MT7CQ9"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROCUREMENT_REQUEST_STATUS_DRAFT",
+                            StatusDetailId = "01KV9YAW9X88QD863P1W6B5Q5R",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROCUREMENT_REQUEST",
-                            StatusId = "STATUS_DRAFT"
+                            ModuleTypeId = "01KV9YAJV5QB7GP7WHCF79ZXBZ",
+                            StatusId = "01KV9YAJVBPHF32EEK5J9WTPDZ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROCUREMENT_REQUEST_STATUS_SUBMITTED",
+                            StatusDetailId = "01KV9YAW9YS0R65MPEXF1KQ71J",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROCUREMENT_REQUEST",
-                            StatusId = "STATUS_SUBMITTED"
+                            ModuleTypeId = "01KV9YAJV5QB7GP7WHCF79ZXBZ",
+                            StatusId = "01KV9YAJVD98AWBSYEH8X5F2ME"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROCUREMENT_REQUEST_STATUS_PENDING",
+                            StatusDetailId = "01KV9YAW9ZWVV9JSYBBHXKF8GR",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROCUREMENT_REQUEST",
-                            StatusId = "STATUS_PENDING"
+                            ModuleTypeId = "01KV9YAJV5QB7GP7WHCF79ZXBZ",
+                            StatusId = "01KV9YAJVCN540QES5K48WWQEJ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROCUREMENT_REQUEST_STATUS_APPROVED",
+                            StatusDetailId = "01KV9YAWA0RPDFH7Y33F2W2DTV",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROCUREMENT_REQUEST",
-                            StatusId = "STATUS_APPROVED"
+                            ModuleTypeId = "01KV9YAJV5QB7GP7WHCF79ZXBZ",
+                            StatusId = "01KV9YAJVF37DXVMEZP8XSGBQR"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROCUREMENT_REQUEST_STATUS_REJECTED",
+                            StatusDetailId = "01KV9YAWA1EKVAACEJ8S0KE14Y",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROCUREMENT_REQUEST",
-                            StatusId = "STATUS_REJECTED"
+                            ModuleTypeId = "01KV9YAJV5QB7GP7WHCF79ZXBZ",
+                            StatusId = "01KV9YAJVGEG94EAA775GMZWYQ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PROCUREMENT_REQUEST_STATUS_REVISION_REQUIRED",
+                            StatusDetailId = "01KV9YAWA2H2KQPEQEK0XNSGQN",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PROCUREMENT_REQUEST",
-                            StatusId = "STATUS_REVISION_REQUIRED"
+                            ModuleTypeId = "01KV9YAJV5QB7GP7WHCF79ZXBZ",
+                            StatusId = "01KV9YAJVHBNJXB222VTHBRDSF"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_REQUEST_STATUS_DRAFT",
+                            StatusDetailId = "01KV9YAWA314XMC956Z7VBRTYG",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_REQUEST",
-                            StatusId = "STATUS_DRAFT"
+                            ModuleTypeId = "01KV9YAJV63ZT8JHHYGNTSSQK6",
+                            StatusId = "01KV9YAJVBPHF32EEK5J9WTPDZ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_REQUEST_STATUS_SUBMITTED",
+                            StatusDetailId = "01KV9YAWA4CWAJTDW78D56EERV",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_REQUEST",
-                            StatusId = "STATUS_SUBMITTED"
+                            ModuleTypeId = "01KV9YAJV63ZT8JHHYGNTSSQK6",
+                            StatusId = "01KV9YAJVD98AWBSYEH8X5F2ME"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_REQUEST_STATUS_PENDING_GM",
+                            StatusDetailId = "01KV9YAWA5MXFVMZNXHM91T511",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_REQUEST",
-                            StatusId = "STATUS_PENDING_GM"
+                            ModuleTypeId = "01KV9YAJV63ZT8JHHYGNTSSQK6",
+                            StatusId = "01KV9YAJVSMFBYSSKFMBYN2SQ6"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_REQUEST_STATUS_GM_APPROVED",
+                            StatusDetailId = "01KV9YAWA645YZKZ726WDMA8Y0",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_REQUEST",
-                            StatusId = "STATUS_GM_APPROVED"
+                            ModuleTypeId = "01KV9YAJV63ZT8JHHYGNTSSQK6",
+                            StatusId = "01KV9YAJVT70W8X52276R2PRE4"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_REQUEST_STATUS_PENDING_CHAIRMAN",
+                            StatusDetailId = "01KV9YAWA7ZSGDFBVJV82NWM7D",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_REQUEST",
-                            StatusId = "STATUS_PENDING_CHAIRMAN"
+                            ModuleTypeId = "01KV9YAJV63ZT8JHHYGNTSSQK6",
+                            StatusId = "01KV9YAJVVTZ2N611HFYQM5R9F"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_REQUEST_STATUS_CHAIRMAN_APPROVED",
+                            StatusDetailId = "01KV9YAWA845T4DF6PGW6MH9J7",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_REQUEST",
-                            StatusId = "STATUS_CHAIRMAN_APPROVED"
+                            ModuleTypeId = "01KV9YAJV63ZT8JHHYGNTSSQK6",
+                            StatusId = "01KV9YAJVW1S8WD9ZE772B0CPC"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_REQUEST_STATUS_APPROVED",
+                            StatusDetailId = "01KV9YAWA9XD1PYW4PWJMH83DV",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_REQUEST",
-                            StatusId = "STATUS_APPROVED"
+                            ModuleTypeId = "01KV9YAJV63ZT8JHHYGNTSSQK6",
+                            StatusId = "01KV9YAJVF37DXVMEZP8XSGBQR"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_REQUEST_STATUS_REJECTED",
+                            StatusDetailId = "01KV9YAWAAAWEJEEJVCK5SNTZX",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_REQUEST",
-                            StatusId = "STATUS_REJECTED"
+                            ModuleTypeId = "01KV9YAJV63ZT8JHHYGNTSSQK6",
+                            StatusId = "01KV9YAJVGEG94EAA775GMZWYQ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_REQUEST_STATUS_REVISION_REQUIRED",
+                            StatusDetailId = "01KV9YAWAB7QV1H0PSR401ASMY",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_REQUEST",
-                            StatusId = "STATUS_REVISION_REQUIRED"
+                            ModuleTypeId = "01KV9YAJV63ZT8JHHYGNTSSQK6",
+                            StatusId = "01KV9YAJVHBNJXB222VTHBRDSF"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_ORDER_STATUS_PO_OPEN",
+                            StatusDetailId = "01KV9YAWACKS85SJEWR5GBM8P8",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_ORDER",
-                            StatusId = "STATUS_PO_OPEN"
+                            ModuleTypeId = "01KV9YAJV7C3KYR6WCM7WHW7AC",
+                            StatusId = "01KV9YAJVK8HCAQ44SMGTT4G5E"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_ORDER_STATUS_PARTIALLY_RECEIVED",
+                            StatusDetailId = "01KV9YAWADBNVEYGABVNWFCW5S",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_ORDER",
-                            StatusId = "STATUS_PARTIALLY_RECEIVED"
+                            ModuleTypeId = "01KV9YAJV7C3KYR6WCM7WHW7AC",
+                            StatusId = "01KV9YAJVMNVYEZJ4R96STMZQY"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PURCHASE_ORDER_STATUS_FULLY_RECEIVED",
+                            StatusDetailId = "01KV9YAWAEX3RQ7RB4XKMEPNZT",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PURCHASE_ORDER",
-                            StatusId = "STATUS_FULLY_RECEIVED"
+                            ModuleTypeId = "01KV9YAJV7C3KYR6WCM7WHW7AC",
+                            StatusId = "01KV9YAJVNKFR14HVFAYJYB9DB"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_GOODS_RECEIPT_STATUS_PENDING",
+                            StatusDetailId = "01KV9YAWAFBRNP231AJC8KXXKR",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_GOODS_RECEIPT",
-                            StatusId = "STATUS_PENDING"
+                            ModuleTypeId = "01KV9YAJV89C6RTMM8Y4A2RFZ8",
+                            StatusId = "01KV9YAJVCN540QES5K48WWQEJ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_GOODS_RECEIPT_STATUS_PARTIALLY_RECEIVED",
+                            StatusDetailId = "01KV9YAWAGK5Y8PVV0MPB3S86T",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_GOODS_RECEIPT",
-                            StatusId = "STATUS_PARTIALLY_RECEIVED"
+                            ModuleTypeId = "01KV9YAJV89C6RTMM8Y4A2RFZ8",
+                            StatusId = "01KV9YAJVMNVYEZJ4R96STMZQY"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_GOODS_RECEIPT_STATUS_FULLY_RECEIVED",
+                            StatusDetailId = "01KV9YAWAH241MTJV0SBRVSTJX",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_GOODS_RECEIPT",
-                            StatusId = "STATUS_FULLY_RECEIVED"
+                            ModuleTypeId = "01KV9YAJV89C6RTMM8Y4A2RFZ8",
+                            StatusId = "01KV9YAJVNKFR14HVFAYJYB9DB"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_GOODS_RECEIPT_STATUS_APPROVED",
+                            StatusDetailId = "01KV9YAWAJV6V0M7JTD0MSDSRH",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_GOODS_RECEIPT",
-                            StatusId = "STATUS_APPROVED"
+                            ModuleTypeId = "01KV9YAJV89C6RTMM8Y4A2RFZ8",
+                            StatusId = "01KV9YAJVF37DXVMEZP8XSGBQR"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_GOODS_RECEIPT_STATUS_REJECTED",
+                            StatusDetailId = "01KV9YAWAKT06G0N5T0FYQMQCS",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_GOODS_RECEIPT",
-                            StatusId = "STATUS_REJECTED"
+                            ModuleTypeId = "01KV9YAJV89C6RTMM8Y4A2RFZ8",
+                            StatusId = "01KV9YAJVGEG94EAA775GMZWYQ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_INVOICE_STATUS_UNPAID",
+                            StatusDetailId = "01KV9YAWAMBNJBZS5K7CK93Q4B",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_INVOICE",
-                            StatusId = "STATUS_UNPAID"
+                            ModuleTypeId = "01KV9YAJV9KSBT1VM9NVA57Q9J",
+                            StatusId = "01KV9YAJVPH2YJQKXY06H8VVZ3"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_INVOICE_STATUS_PARTIALLY_PAID",
+                            StatusDetailId = "01KV9YAWANZW6526JRCKSGBW89",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_INVOICE",
-                            StatusId = "STATUS_PARTIALLY_PAID"
+                            ModuleTypeId = "01KV9YAJV9KSBT1VM9NVA57Q9J",
+                            StatusId = "01KV9YAJVQ57A3XAZDSEXAG3EM"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_INVOICE_STATUS_PAID",
+                            StatusDetailId = "01KV9YAWAPQFR7VKJ6XTMM2X6D",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_INVOICE",
-                            StatusId = "STATUS_PAID"
+                            ModuleTypeId = "01KV9YAJV9KSBT1VM9NVA57Q9J",
+                            StatusId = "01KV9YAJVR8MDP28ZXYXV5DBVJ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PAYMENT_STATUS_PENDING",
+                            StatusDetailId = "01KV9YAWAQ2PRCFS91EJ690VTH",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PAYMENT",
-                            StatusId = "STATUS_PENDING"
+                            ModuleTypeId = "01KV9YAJVABJADS66JR7HASXSF",
+                            StatusId = "01KV9YAJVCN540QES5K48WWQEJ"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PAYMENT_STATUS_APPROVED",
+                            StatusDetailId = "01KV9YAWART12V7JA9F4ME18RC",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PAYMENT",
-                            StatusId = "STATUS_APPROVED"
+                            ModuleTypeId = "01KV9YAJVABJADS66JR7HASXSF",
+                            StatusId = "01KV9YAJVF37DXVMEZP8XSGBQR"
                         },
                         new
                         {
-                            StatusDetailId = "MODULE_PAYMENT_STATUS_REJECTED",
+                            StatusDetailId = "01KV9YAWASJZMC0FMW5G31YYVD",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            ModuleTypeId = "MODULE_PAYMENT",
-                            StatusId = "STATUS_REJECTED"
+                            ModuleTypeId = "01KV9YAJVABJADS66JR7HASXSF",
+                            StatusId = "01KV9YAJVGEG94EAA775GMZWYQ"
                         });
                 });
 
             modelBuilder.Entity("PurchaseRequestSystem.Models.Tax", b =>
                 {
                     b.Property<string>("TaxId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -1811,7 +2032,7 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            TaxId = "TAX_PPN11",
+                            TaxId = "01KV9ZC1WJNT4BXQDTMZJ6KS59",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             TaxCode = "PPN11",
                             TaxDescription = "Value added tax 11%",
@@ -1823,7 +2044,9 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.Uom", b =>
                 {
                     b.Property<string>("UomId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -1852,22 +2075,74 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            UomId = "UOM_PCS",
+                            UomId = "01KV9ZC1WJSEG74KJFNCSTJSWH",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsDeleted = false,
-                            UomCode = "PCS",
+                            UomCode = "kg",
+                            UomName = "Kilogram"
+                        },
+                        new
+                        {
+                            UomId = "01KV9ZC1WJG7GBH690RX0RH67R",
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            IsDeleted = false,
+                            UomCode = "m",
+                            UomName = "Meter"
+                        },
+                        new
+                        {
+                            UomId = "01KV9ZC1WJ8BX6Q99MZS5TNDH7",
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            IsDeleted = false,
+                            UomCode = "m2",
+                            UomName = "Square Meter"
+                        },
+                        new
+                        {
+                            UomId = "01KV9ZC1WJM34T07T1YC4E9VAY",
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            IsDeleted = false,
+                            UomCode = "m3",
+                            UomName = "Cubic Meter"
+                        },
+                        new
+                        {
+                            UomId = "01KV9ZC1WJGCN3SJFCEBTS0ERE",
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            IsDeleted = false,
+                            UomCode = "pcs",
                             UomName = "Pieces"
+                        },
+                        new
+                        {
+                            UomId = "01KV9ZC1WJV001FZH68FTT3AET",
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            IsDeleted = false,
+                            UomCode = "ltr",
+                            UomName = "Liter"
+                        },
+                        new
+                        {
+                            UomId = "01KV9ZC1WJFDW7J64746TB6J27",
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            IsDeleted = false,
+                            UomCode = "ton",
+                            UomName = "Ton"
                         });
                 });
 
             modelBuilder.Entity("PurchaseRequestSystem.Models.UserDetail", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("AccountId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -1892,32 +2167,32 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "USER_REQUESTER",
-                            AccountId = "ACCOUNT_REQUESTER",
+                            UserId = "01KV9YAJTV71Q6PSD6MJ5R2J7P",
+                            AccountId = "01KV9YAJTQ6ZW1FZ39B83T1JKE",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             FullName = "Test Requester",
                             Phone = "081234567890"
                         },
                         new
                         {
-                            UserId = "USER_PROCURE",
-                            AccountId = "ACCOUNT_PROCURE",
+                            UserId = "01KV9YAJTW8WVSDPGXNHSFYQ9A",
+                            AccountId = "01KV9YAJTRK8ER2QQPT4XRZAGR",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             FullName = "Test Procure",
                             Phone = "081234567891"
                         },
                         new
                         {
-                            UserId = "USER_GM",
-                            AccountId = "ACCOUNT_GM",
+                            UserId = "01KV9YAJTX06MXX2KQ9F7KDNCB",
+                            AccountId = "01KV9YAJTS6BKRZBE1MR3CP3XK",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             FullName = "Test GM",
                             Phone = "081234567892"
                         },
                         new
                         {
-                            UserId = "USER_ADMIN",
-                            AccountId = "ACCOUNT_SUPER_ADMIN",
+                            UserId = "01KV9YAJTY53FWWJHBQQ142CRB",
+                            AccountId = "01KV9YAJTTPE5ACQPKH6VMT3XH",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             FullName = "Super Admin",
                             Phone = "081234567893"
@@ -1927,13 +2202,17 @@ namespace PurchaseRequestSystem.Migrations
             modelBuilder.Entity("PurchaseRequestSystem.Models.Vendor", b =>
                 {
                     b.Property<string>("VendorId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -1942,7 +2221,9 @@ namespace PurchaseRequestSystem.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(26)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(26)");
 
                     b.Property<string>("VendorCode")
                         .IsRequired()
@@ -1964,11 +2245,12 @@ namespace PurchaseRequestSystem.Migrations
                     b.HasData(
                         new
                         {
-                            VendorId = "VENDOR_TEST",
+                            VendorId = "01KV9ZC1WJ0S5HY3S3AK6AS9X4",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "01KV9YAJTTPE5ACQPKH6VMT3XH",
                             IsDeleted = false,
-                            VendorCode = "VND001",
-                            VendorName = "PT Test Vendor"
+                            VendorCode = "VND-CEMENT-01",
+                            VendorName = "CV Sumber Material Bangunan"
                         });
                 });
 

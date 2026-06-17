@@ -24,7 +24,7 @@ public class ProposalController : ControllerBase
         return Ok(ApiResponse<IReadOnlyList<ProposalResponseDto>>.Success(result, "Data retrieved successfully"));
     }
 
-    [HttpGet("{id:guid}")]
+    [HttpGet("{id}")]
     [ProducesResponseType(typeof(ApiResponse<ProposalResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(string id, CancellationToken cancellationToken)
@@ -42,7 +42,7 @@ public class ProposalController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = result.ProposalId }, ApiResponse<ProposalResponseDto>.Created(result, "Data created successfully"));
     }
 
-    [HttpPut("{id:guid}")]
+    [HttpPut("{id}")]
     [ProducesResponseType(typeof(ApiResponse<ProposalResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -52,7 +52,7 @@ public class ProposalController : ControllerBase
         return Ok(ApiResponse<ProposalResponseDto>.Success(result, "Data updated successfully"));
     }
 
-    [HttpDelete("{id:guid}")]
+    [HttpDelete("{id}")]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(string id, CancellationToken cancellationToken)
@@ -61,7 +61,7 @@ public class ProposalController : ControllerBase
         return Ok(ApiResponse<object>.Success(null, "Data deleted successfully"));
     }
 
-    [HttpPost("{id:guid}/submit")]
+    [HttpPost("{id}/submit")]
     [ProducesResponseType(typeof(ApiResponse<SubmitResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -71,7 +71,7 @@ public class ProposalController : ControllerBase
         return Ok(ApiResponse<SubmitResponseDto>.Success(result, "Proposal submitted successfully"));
     }
 
-    [HttpPost("{id:guid}/review")]
+    [HttpPost("{id}/review")]
     [ProducesResponseType(typeof(ApiResponse<ProposalResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<ValidationErrorData>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
